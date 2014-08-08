@@ -127,7 +127,7 @@ function loadMain()
   console.log(JSON.stringify(options));
   
   
-  /*
+  
   ajax(
     {
       url: 'http://ezhbaev.ru/pebble/myapp/',
@@ -158,7 +158,7 @@ function loadMain()
       main.subtitle('Loding error.');
           
     }
-  );*/
+  );
 }
 
 main.on('click', 'select', function(e) {
