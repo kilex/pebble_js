@@ -8,7 +8,23 @@ var UI = require('ui');
 var Vector2 = require('vector2');
 var ajax = require('ajax');
 var allMenu = [];
+var Settings = require('settings');
 //var allCards;
+
+Settings.config(
+  { url: 'http://ezhbaev.ru/pebble/myapp/?settings' },
+  function(e) {
+    console.log('closed configurable');
+
+    // Show the parsed response
+    console.log(JSON.stringify(e.options));
+
+    // Show the raw response if parsing failed
+    if (e.failed) {
+      console.log(e.response);
+    }
+  }
+);
 
 
 var main = new UI.Card({
@@ -106,6 +122,12 @@ function makeMenu(menu_level, sections){
 
 function loadMain()
 {
+  
+  var options = Settings.option();
+  console.log(JSON.stringify(options));
+  
+  
+  /*
   ajax(
     {
       url: 'http://ezhbaev.ru/pebble/myapp/',
@@ -136,7 +158,7 @@ function loadMain()
       main.subtitle('Loding error.');
           
     }
-  );
+  );*/
 }
 
 main.on('click', 'select', function(e) {
