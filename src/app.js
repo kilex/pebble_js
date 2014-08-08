@@ -42,7 +42,7 @@ function itemSelected(e, lvl){
   console.log('sec='+e.section+'&item='+e.item+'&lvl='+lvl);
   ajax(
     {
-      url: 'http://ezhbaev.ru/pebble/myapp/?sec='+e.section+'&item='+e.item+'&lvl='+lvl,
+      url: Settings.option('server_url')+'?sec='+e.section+'&item='+e.item+'&lvl='+lvl,
       type: 'json'
     },
     function(data){
@@ -130,7 +130,7 @@ function loadMain()
   
   ajax(
     {
-      url: 'http://ezhbaev.ru/pebble/myapp/',
+      url: Settings.option('server_url'),
       type: 'json'
     },
     function(data) {
