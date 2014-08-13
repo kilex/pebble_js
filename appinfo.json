@@ -3,14 +3,13 @@
     "capabilities": [
         "configurable"
     ],
-    "companyName": "ezhbaev@gmail.com",
-    "longName": "js_test",
+    "companyName": "kilexst@gmail.com",
+    "longName": "Universal Remoter",
     "projectType": "pebblejs",
     "resources": {
         "media": [
             {
                 "file": "images/menu_icon.png",
-                "menuIcon": true,
                 "name": "IMAGE_MENU_ICON",
                 "type": "png"
             },
@@ -28,13 +27,29 @@
                 "file": "fonts/UbuntuMono-Regular.ttf",
                 "name": "MONO_FONT_14",
                 "type": "font"
+            },
+            {
+                "file": "images/icon_home.png",
+                "menuIcon": true,
+                "name": "IMAGES_ICON_HOME_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/logo_splash.png",
+                "name": "IMAGES_LOGO_SPLASH_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/tile_splash.png",
+                "name": "IMAGES_TILE_SPLASH_PNG",
+                "type": "png"
             }
         ]
     },
-    "shortName": "js_test",
-    "uuid": "34992e65-58cf-4526-b75b-d43cfb4ca588",
+    "shortName": "Remoter",
+    "uuid": "34992e65-58cf-4526-b75b-d43cfb4ca589",
     "versionCode": 1,
-    "versionLabel": "1.0",
+    "versionLabel": "1.1",
     "watchapp": {
         "watchface": false
     }

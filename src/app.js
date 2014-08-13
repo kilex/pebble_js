@@ -11,8 +11,9 @@ var allMenu = [];
 var Settings = require('settings');
 //var allCards;
 
+
 Settings.config(
-  { url: 'http://ezhbaev.ru/pebble/myapp/?settings' },
+  { url: 'http://kilex.ru/pebble_js/server_example/server.php?settings&set_url='+Settings.option('server_url') },
   function(e) {
     console.log('closed configurable');
 
@@ -28,14 +29,14 @@ Settings.config(
 
 
 var main = new UI.Card({
-  title: 'DemKa',
+  title: 'Remoter',
   //icon: 'images/menu_icon.png',
-  subtitle: 'Loading...',
-  body: 'Wait.'
+  //subtitle: 'Loading...',
+  body: 'Loading...'
 });
 
 
-main.show();
+//main.show();
 loadMain();
 
 function itemSelected(e, lvl){
@@ -43,7 +44,10 @@ function itemSelected(e, lvl){
   ajax(
     {
       url: Settings.option('server_url')+'?sec='+e.section+'&item='+e.item+'&lvl='+lvl,
-      type: 'json'
+      type: 'json',
+       headers: {
+        contentType: 'application/json; charset=utf-8'
+      }
     },
     function(data){
       
@@ -125,9 +129,7 @@ function loadMain()
   
   var options = Settings.option();
   console.log(JSON.stringify(options));
-  
-  
-  
+
   ajax(
     {
       url: Settings.option('server_url'),
@@ -150,7 +152,7 @@ function loadMain()
         itemSelected(e, 0);
       });
       
-      main.subtitle("Press 'SELECT' to RELOAD");
+      //main.body("Press 'SELECT' to LOAD menu from server");
       
     },
     function(error) {
